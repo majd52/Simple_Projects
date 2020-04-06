@@ -15,8 +15,6 @@ bool admin=0;
 string id;
 string username;
 string query;
- time_t now=time(0);
-    tm *itm =localtime(&now);
 
 void db_connection();
 string get_date();
@@ -153,6 +151,8 @@ void sign_up(){
 
 }
 string get_date(){
+ time_t now=time(0);
+    tm *itm =localtime(&now);
 
             stringstream ss; //for register time
   ss<<(itm->tm_year+1900);
